@@ -10,8 +10,10 @@ Source0:	http://dominia.org/djao/limit/mod_limitipconn-%{version}.tar.bz2
 # Source0-md5:	5cf6ddc6743931afef26c03de851279b
 Source1:	apache.conf
 URL:		http://dominia.org/djao/limitipconn2.html
-BuildRequires:	apache-devel
+BuildRequires:	%{apxs}
+BuildRequires:	apache-devel >= 2.0.0
 BuildRequires:	rpmbuild(macros) >= 1.228
+Requires:	apache(modules-api) = %apache_modules_api
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_pkglibdir	%(%{apxs} -q LIBEXECDIR 2>/dev/null)
