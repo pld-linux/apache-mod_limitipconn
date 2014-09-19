@@ -3,7 +3,7 @@
 Summary:	Apache module: Limit simultaneous connections by an IP address
 Name:		apache-mod_%{mod_name}
 Version:	0.24
-Release:	1
+Release:	2
 License:	Apache
 Group:		Networking/Daemons
 Source0:	http://dominia.org/djao/limit/mod_limitipconn-%{version}.tar.bz2
@@ -43,11 +43,11 @@ cp -a %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/conf.d/90_mod_%{mod_name}.conf
 rm -rf $RPM_BUILD_ROOT
 
 %post
-%service apache restart
+%service httpd restart
 
 %postun
 if [ "$1" = "0" ]; then
-	%service -q apache restart
+	%service -q httpd restart
 fi
 
 %files
