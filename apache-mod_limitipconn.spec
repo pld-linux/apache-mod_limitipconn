@@ -3,7 +3,7 @@
 Summary:	Apache module: Limit simultaneous connections by an IP address
 Name:		apache-mod_%{mod_name}
 Version:	0.24
-Release:	2
+Release:	3
 License:	Apache
 Group:		Networking/Daemons
 Source0:	http://dominia.org/djao/limit/mod_limitipconn-%{version}.tar.bz2
